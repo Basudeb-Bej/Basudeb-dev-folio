@@ -36,18 +36,18 @@
 <div align="center">
 
 <!-- Add your own screenshots to the assets/ folder with these names -->
-<img src="assets/home.png" alt="Home page" width="85%" />
+<img src="docs/assets/home.png" alt="Home page" width="85%" />
 
 <br/><br/>
 
 <table>
   <tr>
-    <td align="center"><img src="assets/projects.png" alt="Projects section" /><br/><sub><b>Projects</b></sub></td>
-    <td align="center"><img src="assets/contact.png" alt="Contact section" /><br/><sub><b>Contact</b></sub></td>
+    <td align="center"><img src="docs/assets/projects.png" alt="Projects section" /><br/><sub><b>Projects</b></sub></td>
+    <td align="center"><img src="docs/assets/contact.png" alt="Contact section" /><br/><sub><b>Contact</b></sub></td>
   </tr>
   <tr>
-    <td align="center"><img src="assets/chatbot.png" alt="AI chatbot" /><br/><sub><b>AI Assistant</b></sub></td>
-    <td align="center"><img src="assets/light-mode.png" alt="Light mode" /><br/><sub><b>Light Mode</b></sub></td>
+    <td align="center"><img src="docs/assets/chatbot.png" alt="AI chatbot" /><br/><sub><b>AI Assistant</b></sub></td>
+    <td align="center"><img src="docs/assets/light-mode.png" alt="Light mode" /><br/><sub><b>Light Mode</b></sub></td>
   </tr>
 </table>
 
@@ -96,7 +96,7 @@
 
 <div align="center">
 
-<img src="https://skillicons.dev/icons?i=react,vite,js,html,css,nodejs,express,mongodb,vercel,git,github,vscode&perline=12" alt="Tech stack icons" />
+<img src="https://skillicons.dev/icons?i=react,vite,js,css,nodejs,express,mongodb,vercel,git,github,vscode&perline=12" alt="Tech stack icons" />
 
 </div>
 
