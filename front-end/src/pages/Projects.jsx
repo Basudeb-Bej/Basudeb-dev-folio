@@ -26,8 +26,8 @@ const projects = [
     description:
       "A full-stack digital wallet web application featuring dynamic UPI QR codes, instant peer-to-peer transfers, real-time analytics, invoicing, and 2FA security.",
     details: ["React", "FastAPI", "Tailwind CSS", "Dynamic UPI QR", "2FA"],
-    link: "#",
-    linkLabel: "Talk about this project",
+    link: "https://payzo-one.vercel.app/",
+    linkLabel: "Open live demo",
   },
   {
     number: "03",
