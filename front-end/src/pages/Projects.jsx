@@ -6,27 +6,28 @@ import image4 from "../assets/img/image4.png";
 import image5 from "../assets/img/image5.png";
 import image6 from "../assets/img/image6.png";
 import image7 from "../assets/img/image7.png";
+import image8 from "../assets/img/image8.png";
 
 const projects = [
   {
     number: "01",
-    title: "Portfolio Studio",
-    image: image4,
+    title: "Quantic — AI Chatbot",
+    image: image7,
     description:
-      "A clean personal branding experience that pairs premium typography, animated surfaces, and clear section hierarchy.",
-    details: ["React", "Responsive UI", "Motion-ready layout"],
-    link: "#",
-    linkLabel: "Talk about this project",
+      "Quantic is a modern AI chat assistant with a clean dark interface, voice input, file attachments, and user accounts for saved, personalised conversations.",
+    details: ["AI Chat", "Voice Input", "File Uploads", "Auth"],
+    link: "https://quantic-nu.vercel.app/",
+    linkLabel: "Open live demo",
   },
   {
     number: "02",
-    title: "Weather-X",
-    image: image5,
+    title: "Payzo — Digital Wallet",
+    image: image8,
     description:
-      "Weather X is a sleek weather app that provides real-time conditions, forecasts, and location-based updates in a simple, modern interface.",
-    details: ["Live updates", "Interactive UI", "REST API"],
-    link: "https://weather-x-topaz.vercel.app/",
-    linkLabel: "Open live demo",
+      "A full-stack digital wallet web application featuring dynamic UPI QR codes, instant peer-to-peer transfers, real-time analytics, invoicing, and 2FA security.",
+    details: ["React", "FastAPI", "Tailwind CSS", "Dynamic UPI QR", "2FA"],
+    link: "#",
+    linkLabel: "Talk about this project",
   },
   {
     number: "03",
@@ -38,15 +39,25 @@ const projects = [
     link: "https://zero-bank-five.vercel.app/",
     linkLabel: "Open live demo",
   },
-    {
+  {
     number: "04",
-    title: "Quantic — AI Chatbot",
-    image: image7,
+    title: "Weather-X",
+    image: image5,
     description:
-      "Quantic is a modern AI chat assistant with a clean dark interface, voice input, file attachments, and user accounts for saved, personalised conversations.",
-    details: ["AI Chat", "Voice Input", "File Uploads", "Auth"],
-    link: "https://quantic-nu.vercel.app/",
+      "Weather X is a sleek weather app that provides real-time conditions, forecasts, and location-based updates in a simple, modern interface.",
+    details: ["Live updates", "Interactive UI", "REST API"],
+    link: "https://weather-x-topaz.vercel.app/",
     linkLabel: "Open live demo",
+  },
+  {
+    number: "05",
+    title: "Portfolio Studio",
+    image: image4,
+    description:
+      "A clean personal branding experience that pairs premium typography, animated surfaces, and clear section hierarchy.",
+    details: ["React", "Responsive UI", "Motion-ready layout"],
+    link: "#",
+    linkLabel: "Talk about this project",
   },
 ];
 
