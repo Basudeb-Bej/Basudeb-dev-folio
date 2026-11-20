@@ -266,17 +266,17 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Upwork */}
+              {/* Fiverr */}
               <div className="contact-method">
                 <img
-                  src="https://cdn.simpleicons.org/upwork/6FDA44"
+                  src="https://cdn.simpleicons.org/fiverr/1DBF73"
                   alt=""
                   style={{ width: "1.15rem", height: "1.15rem", flexShrink: 0 }}
                 />
                 <div>
-                  <strong>Upwork</strong>
-                  <a href="https://www.upwork.com/freelancers/~017a3203a79a1e47e7" target="_blank" rel="noreferrer">
-                    Upwork Profile
+                  <strong>Fiverr</strong>
+                  <a href="https://www.fiverr.com/s/NeW5GLp" target="_blank" rel="noreferrer">
+                    Fiverr Profile
                   </a>
                 </div>
               </div>
