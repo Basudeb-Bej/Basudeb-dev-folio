@@ -1,6 +1,7 @@
 // front-end/src/pages/About.jsx
 import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
+import { RevealBlock, StaggerGrid, StaggerItem } from "../components/MotionPrimitives";
 
 const capabilities = [
   {
@@ -42,108 +43,114 @@ const techStack = [
 const About = () => {
   return (
     <section className="portfolio-page">
-      <div className="background-grid" />
-      <div className="background-orb one" />
-      <div className="background-orb two" />
-
       <Container className="portfolio-shell">
         <div className="portfolio-hero">
           <Row className="mb-5 align-items-center">
             <Col lg={7}>
-              <span className="eyebrow mb-3 d-inline-flex">About</span>
-              <h2 className="section-title">
-                Full-stack development, built the way products actually get used
-              </h2>
-              <p className="section-copy">
-                I build complete web applications — from database schema to
-                deployed UI — with a focus on clarity and reliability over
-                flash. My background spans both JavaScript and Python stacks,
-                so I pick the right tool for a problem rather than forcing
-                every project into one framework.
-              </p>
+              <RevealBlock>
+                <span className="eyebrow mb-3 d-inline-flex">About</span>
+                <h2 className="section-title">
+                  Full-stack development, built the way products actually get used
+                </h2>
+                <p className="section-copy">
+                  I build complete web applications — from database schema to
+                  deployed UI — with a focus on clarity and reliability over
+                  flash. My background spans both JavaScript and Python stacks,
+                  so I pick the right tool for a problem rather than forcing
+                  every project into one framework.
+                </p>
+              </RevealBlock>
             </Col>
 
             <Col lg={5} className="d-none d-lg-block">
-              <lottie-player
-                src="https://assets5.lottiefiles.com/packages/lf20_iv4dsx3q.json"
-                background="transparent"
-                speed="1"
-                loop
-                autoplay
-                style={{ width: "100%", height: "320px" }}
-              />
+              <RevealBlock delay={0.15}>
+                <lottie-player
+                  src="https://assets5.lottiefiles.com/packages/lf20_iv4dsx3q.json"
+                  background="transparent"
+                  speed="1"
+                  loop
+                  autoplay
+                  style={{ width: "100%", height: "320px" }}
+                />
+              </RevealBlock>
             </Col>
           </Row>
 
           {/* Capabilities Grid */}
-          <Row className="g-4 mb-5">
-            {capabilities.map((item) => (
-              <Col key={item.title} md={6} lg={3}>
-                <Card className="h-100 footer-panel about-card-glow border-0">
-                  <Card.Body className="p-0">
-                    <div
-                      className="d-inline-flex align-items-center justify-content-center rounded-3 mb-3"
-                      style={{
-                        width: "2.75rem",
-                        height: "2.75rem",
-                        background: "rgba(56, 189, 248, 0.16)",
-                        border: "1px solid rgba(56, 189, 248, 0.2)",
-                      }}
-                    >
-                      <i
-                        className={`bi ${item.icon} fs-5`}
-                        style={{ color: "var(--primary-strong)" }}
-                      />
-                    </div>
-                    <Card.Title className="h6 fw-bold mb-2">
-                      {item.title}
-                    </Card.Title>
-                    <Card.Text
-                      className="muted-copy small mb-0"
-                      style={{ lineHeight: 1.65 }}
-                    >
-                      {item.body}
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-              </Col>
-            ))}
-          </Row>
+          <StaggerGrid>
+            <Row className="g-4 mb-5">
+              {capabilities.map((item) => (
+                <Col key={item.title} md={6} lg={3}>
+                  <StaggerItem className="h-100">
+                    <Card className="h-100 footer-panel about-card-glow futuristic-glass-card border-0">
+                      <Card.Body className="p-0">
+                        <div
+                          className="d-inline-flex align-items-center justify-content-center rounded-3 mb-3 futuristic-icon-box"
+                          style={{
+                            width: "2.75rem",
+                            height: "2.75rem",
+                            background: "rgba(56, 189, 248, 0.16)",
+                            border: "1px solid rgba(56, 189, 248, 0.28)",
+                          }}
+                        >
+                          <i
+                            className={`bi ${item.icon} fs-5`}
+                            style={{ color: "var(--primary-strong)" }}
+                          />
+                        </div>
+                        <Card.Title className="h6 fw-bold mb-2">
+                          {item.title}
+                        </Card.Title>
+                        <Card.Text
+                          className="muted-copy small mb-0"
+                          style={{ lineHeight: 1.65 }}
+                        >
+                          {item.body}
+                        </Card.Text>
+                      </Card.Body>
+                    </Card>
+                  </StaggerItem>
+                </Col>
+              ))}
+            </Row>
+          </StaggerGrid>
 
           {/* Tech Stack Card */}
-          <Card className="footer-panel about-card-glow border-0">
-            <Card.Body className="p-0">
-              <h3 className="h5 fw-bold mb-1">Technologies I work with</h3>
-              <p
-                className="muted-copy small mb-3"
-                style={{ lineHeight: 1.6 }}
-              >
-                Comfortable across both JavaScript (React, Node.js, Express)
-                and Python full-stack development — databases, APIs,
-                authentication, and deployment included.
-              </p>
+          <RevealBlock delay={0.1}>
+            <Card className="footer-panel about-card-glow futuristic-glass-card border-0">
+              <Card.Body className="p-0">
+                <h3 className="h5 fw-bold mb-1">Technologies I work with</h3>
+                <p
+                  className="muted-copy small mb-3"
+                  style={{ lineHeight: 1.6 }}
+                >
+                  Comfortable across both JavaScript (React, Node.js, Express)
+                  and Python full-stack development — databases, APIs,
+                  authentication, and deployment included.
+                </p>
 
-              <div className="d-flex flex-wrap gap-2">
-                {techStack.map((tech) => (
-                  <span
-                    key={tech.label}
-                    className="tag-chip d-inline-flex align-items-center gap-2 px-3 py-2 fw-semibold"
-                    style={{ fontSize: "0.86rem", borderRadius: "999px" }}
-                  >
-                    <i
-                      className={tech.icon}
-                      style={
-                        tech.label === "Express"
-                          ? { filter: "var(--express-filter, none)" }
-                          : undefined
-                      }
-                    />
-                    {tech.label}
-                  </span>
-                ))}
-              </div>
-            </Card.Body>
-          </Card>
+                <div className="d-flex flex-wrap gap-2">
+                  {techStack.map((tech) => (
+                    <span
+                      key={tech.label}
+                      className="tag-chip futuristic-tag-chip d-inline-flex align-items-center gap-2 px-3 py-2 fw-semibold"
+                      style={{ fontSize: "0.86rem", borderRadius: "999px" }}
+                    >
+                      <i
+                        className={tech.icon}
+                        style={
+                          tech.label === "Express"
+                            ? { filter: "var(--express-filter, none)" }
+                            : undefined
+                        }
+                      />
+                      {tech.label}
+                    </span>
+                  ))}
+                </div>
+              </Card.Body>
+            </Card>
+          </RevealBlock>
         </div>
       </Container>
     </section>

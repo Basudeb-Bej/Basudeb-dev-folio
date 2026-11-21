@@ -1280,3 +1280,441 @@ body.light .chatbot-shell .chatbot-launcher-avatar {
   position: relative;
   z-index: 1;
 }
+
+/* ==========================================================================
+   FUTURISTIC NEURAL BACKGROUND & PORTFOLIO MOTION SYSTEM
+   ========================================================================== */
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* ---------- 1. Multi-Depth Neural Network Background ---------- */
+@keyframes neuralGridScroll {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 56px 56px, 56px 56px;
+  }
+}
+
+@keyframes auroraDriftA {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(5vw, 4vh, 0) scale(1.09);
+  }
+}
+
+@keyframes auroraDriftB {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-5vw, -4vh, 0) scale(1.08);
+  }
+}
+
+@keyframes auroraDriftC {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(3vw, -5vh, 0) scale(1.06);
+  }
+}
+
+.neural-bg-stage {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.portfolio-page {
+  position: relative;
+}
+
+.portfolio-shell,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hide legacy static background divs if any remain */
+.portfolio-page > .background-grid,
+.portfolio-page > .background-orb {
+  display: none;
+}
+
+.neural-bg-grid {
+  position: absolute;
+  inset: -56px;
+  background-image:
+    linear-gradient(to right, rgba(56, 189, 248, 0.055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(192, 132, 252, 0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at 50% 42%, #000 35%, transparent 82%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 42%, #000 35%, transparent 82%);
+  animation: neuralGridScroll 28s linear infinite;
+  will-change: background-position;
+}
+
+body.light .neural-bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(2, 132, 199, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(124, 58, 237, 0.05) 1px, transparent 1px);
+}
+
+.neural-bg-aurora {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(95px);
+  opacity: 0.44;
+  will-change: transform;
+}
+
+.neural-bg-aurora-1 {
+  top: -14%;
+  left: -10%;
+  width: clamp(20rem, 42vw, 40rem);
+  height: clamp(20rem, 42vw, 40rem);
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.45), transparent 70%);
+  animation: auroraDriftA 22s ease-in-out infinite;
+}
+
+.neural-bg-aurora-2 {
+  right: -12%;
+  bottom: -16%;
+  width: clamp(22rem, 44vw, 42rem);
+  height: clamp(22rem, 44vw, 42rem);
+  background: radial-gradient(circle, rgba(192, 132, 252, 0.38), transparent 70%);
+  animation: auroraDriftB 26s ease-in-out infinite;
+}
+
+.neural-bg-aurora-3 {
+  top: 32%;
+  left: 40%;
+  width: clamp(16rem, 32vw, 30rem);
+  height: clamp(16rem, 32vw, 30rem);
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.24), transparent 70%);
+  animation: auroraDriftC 20s ease-in-out infinite;
+}
+
+body.light .neural-bg-aurora {
+  opacity: 0.28;
+}
+
+.neural-bg-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.neural-bg-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 42%, transparent 46%, rgba(3, 9, 22, 0.62) 100%);
+}
+
+body.light .neural-bg-vignette {
+  background: radial-gradient(circle at 50% 42%, transparent 55%, rgba(241, 245, 249, 0.68) 100%);
+}
+
+/* ---------- 2. Hero Enhancements ---------- */
+@keyframes heroPulseDot {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.65);
+  }
+  50% {
+    transform: scale(1.15);
+    box-shadow: 0 0 0 6px rgba(56, 189, 248, 0);
+  }
+}
+
+@keyframes ringHaloSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.hero-cyber-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hero-status-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: #38bdf8;
+  animation: heroPulseDot 2.2s ease-in-out infinite;
+}
+
+.hero-gradient-highlight {
+  background: linear-gradient(120deg, #38bdf8 0%, #22d3ee 45%, #c084fc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+}
+
+body.light .hero-gradient-highlight {
+  background: linear-gradient(120deg, #0284c7 0%, #0891b2 45%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+}
+
+.futuristic-btn-glow {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 28px rgba(56, 189, 248, 0.28);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.futuristic-btn-glow::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 80%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: left 0.55s ease;
+}
+
+.futuristic-btn-glow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 36px rgba(56, 189, 248, 0.42);
+}
+
+.futuristic-btn-glow:hover::after {
+  left: 140%;
+}
+
+.futuristic-btn-outline {
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.futuristic-btn-outline:hover {
+  transform: translateY(-2px);
+  border-color: rgba(56, 189, 248, 0.55) !important;
+  box-shadow: 0 10px 24px rgba(56, 189, 248, 0.16);
+}
+
+.futuristic-profile-card {
+  position: relative;
+  border: 1px solid rgba(56, 189, 248, 0.22) !important;
+  box-shadow:
+    0 24px 60px rgba(2, 8, 23, 0.48),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.futuristic-profile-card:hover {
+  border-color: rgba(56, 189, 248, 0.45) !important;
+  box-shadow:
+    0 28px 70px rgba(2, 8, 23, 0.55),
+    0 0 32px rgba(56, 189, 248, 0.16);
+}
+
+.futuristic-profile-ring {
+  position: relative;
+}
+
+.futuristic-profile-ring::before {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    rgba(56, 189, 248, 0.8),
+    rgba(192, 132, 252, 0.7),
+    rgba(34, 211, 238, 0.2),
+    rgba(56, 189, 248, 0.8)
+  );
+  z-index: -1;
+  animation: ringHaloSpin 9s linear infinite;
+  opacity: 0.75;
+}
+
+/* ---------- 3. Cards, Project Tilt & Interactive Hover Glow ---------- */
+.futuristic-glass-card {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.futuristic-glass-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(56, 189, 248, 0.36) !important;
+  box-shadow:
+    0 18px 42px rgba(2, 8, 23, 0.34),
+    0 0 24px rgba(56, 189, 248, 0.12);
+}
+
+body.light .futuristic-glass-card:hover {
+  box-shadow:
+    0 16px 36px rgba(15, 23, 42, 0.09),
+    0 0 20px rgba(2, 132, 199, 0.1);
+}
+
+.futuristic-icon-box {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.futuristic-glass-card:hover .futuristic-icon-box {
+  transform: scale(1.08);
+  box-shadow: 0 0 18px rgba(56, 189, 248, 0.32);
+}
+
+.futuristic-tag-chip {
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.futuristic-tag-chip:hover {
+  transform: translateY(-2px);
+  border-color: rgba(56, 189, 248, 0.45) !important;
+  box-shadow: 0 6px 16px rgba(56, 189, 248, 0.16);
+}
+
+/* 3D Tilt Project Card & Spotlight Sheen */
+.futuristic-tilt-card {
+  position: relative;
+  border-radius: inherit;
+}
+
+.futuristic-project-card {
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.futuristic-project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    420px circle at var(--spotlight-x, 50%) var(--spotlight-y, 50%),
+    rgba(56, 189, 248, 0.12),
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.futuristic-tilt-card:hover .futuristic-project-card::before {
+  opacity: 1;
+}
+
+.futuristic-tilt-card:hover .futuristic-project-card {
+  border-color: rgba(56, 189, 248, 0.42) !important;
+  box-shadow:
+    0 22px 48px rgba(2, 8, 23, 0.42),
+    0 0 28px rgba(192, 132, 252, 0.14);
+}
+
+.project-image-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid rgba(166, 191, 255, 0.14);
+  background: rgba(0, 0, 0, 0.2);
+  margin-bottom: 0.8rem;
+}
+
+.project-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-card:hover .project-card-image {
+  transform: scale(1.06);
+}
+
+body.light .project-image-wrapper {
+  border-color: rgba(15, 23, 42, 0.08);
+  background: rgba(15, 23, 42, 0.04);
+}
+
+/* Contact input futuristic focus glow */
+.contact-input {
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.contact-input:focus {
+  border-color: rgba(56, 189, 248, 0.65) !important;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.16);
+}
+
+/* Footer minimal top aura */
+footer {
+  border-top: 1px solid rgba(56, 189, 248, 0.14);
+}
+
+/* ---------- 4. Cross-Device Responsive Guarantees (320px - 1920px+) ---------- */
+@media (max-width: 768px) {
+  .hero-actions {
+    flex-wrap: wrap;
+    gap: 0.65rem;
+  }
+
+  .hero-actions .portfolio-btn {
+    flex: 1 1 auto;
+    justify-content: center;
+    min-width: 135px;
+  }
+
+  .floating-tag {
+    font-size: 0.72rem;
+    padding: 0.35rem 0.65rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .hero-futuristic-title {
+    font-size: 1.95rem !important;
+    line-height: 1.12 !important;
+  }
+
+  .hero-actions .portfolio-btn {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .neural-bg-grid,
+  .neural-bg-aurora,
+  .hero-status-dot,
+  .futuristic-profile-ring::before {
+    animation: none !important;
+  }
+
+  .futuristic-glass-card,
+  .futuristic-btn-glow,
+  .project-card-image {
+    transition: none !important;
+  }
+}

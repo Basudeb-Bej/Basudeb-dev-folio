@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import image2 from "../assets/img/image2.png";
 import ImageLightbox from "../components/ImageLightbox";
+import { RevealBlock, StaggerGrid, StaggerItem } from "../components/MotionPrimitives";
 
 const skills = [
   {
@@ -41,26 +42,24 @@ const Skills = () => {
 
   return (
     <section className="portfolio-page">
-      <div className="background-grid" />
-      <div className="background-orb one" />
-      <div className="background-orb two" />
-
       <div className="portfolio-shell">
         <div className="portfolio-hero">
           <div className="portfolio-hero-grid">
-            <div className="skill-grid">
-              {skills.map((skill, index) => (
-                <article className="skill-card" key={skill.title} style={{ animationDelay: `${index * 0.08}s` }}>
-                  <span className="skill-icon-badge" aria-hidden="true">
-                    <i className={`bi ${skill.icon}`} />
-                  </span>
-                  <strong>{skill.title}</strong>
-                  <p>{skill.description}</p>
-                </article>
+            <StaggerGrid className="skill-grid" stagger={0.07}>
+              {skills.map((skill) => (
+                <StaggerItem key={skill.title}>
+                  <article className="skill-card futuristic-glass-card h-100">
+                    <span className="skill-icon-badge futuristic-icon-box" aria-hidden="true">
+                      <i className={`bi ${skill.icon}`} />
+                    </span>
+                    <strong>{skill.title}</strong>
+                    <p>{skill.description}</p>
+                  </article>
+                </StaggerItem>
               ))}
-            </div>
+            </StaggerGrid>
 
-            <div className="portfolio-panel">
+            <RevealBlock delay={0.15} className="portfolio-panel futuristic-glass-card">
               <div className="experience-card">
                 <button
                   type="button"
@@ -85,7 +84,7 @@ const Skills = () => {
                   <span className="eyebrow">Experience</span>
                   <h3>Full-Stack Developer Internship</h3>
                   <p>
-                    Built practical{' '}
+                    Built practical{" "}
                     <a
                       href="https://zero-bank-five.vercel.app/"
                       target="_blank"
@@ -93,7 +92,7 @@ const Skills = () => {
                       className="project-link text-decoration-underline"
                     >
                       'Digital core Banking System'
-                    </a>{' '}
+                    </a>{" "}
                     and web app features during a Full-Stack Developer internship,
                     focusing on React UI work, Node.js and Express flows, MongoDB data handling,
                     and turning ideas into clean user-facing screens.
@@ -106,7 +105,6 @@ const Skills = () => {
                     <span className="skill-chip">MongoDB</span>
                   </div>
 
-                  {/* Live Project Link */}
                   <a
                     href="https://zero-bank-five.vercel.app/"
                     target="_blank"
@@ -117,7 +115,7 @@ const Skills = () => {
                   </a>
                 </div>
               </div>
-            </div>
+            </RevealBlock>
           </div>
         </div>
       </div>

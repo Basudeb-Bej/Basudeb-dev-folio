@@ -1,6 +1,12 @@
 // front-end/src/pages/Projects.jsx
 import React from "react";
 import { Link } from "react-router-dom";
+import {
+  RevealBlock,
+  StaggerGrid,
+  StaggerItem,
+  TiltCard,
+} from "../components/MotionPrimitives";
 
 import image4 from "../assets/img/image4.png";
 import image5 from "../assets/img/image5.png";
@@ -64,90 +70,69 @@ const projects = [
 const Projects = () => {
   return (
     <section className="portfolio-page">
-      <style>{`
-        .project-image-wrapper {
-          width: 100%;
-          aspect-ratio: 16 / 9;
-          overflow: hidden;
-          border-radius: 14px;
-          border: 1px solid rgba(166, 191, 255, 0.14);
-          background: rgba(0, 0, 0, 0.2);
-          margin-bottom: 0.8rem;
-        }
-        .project-card-image {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          transition: transform 0.35s ease;
-        }
-        .project-card:hover .project-card-image {
-          transform: scale(1.05);
-        }
-        body.light .project-image-wrapper {
-          border-color: rgba(15, 23, 42, 0.08);
-          background: rgba(15, 23, 42, 0.04);
-        }
-      `}</style>
-
-      <div className="background-grid" />
-      <div className="background-orb one" />
-      <div className="background-orb two" />
-
       <div className="portfolio-shell">
-        <div className="section-heading">
+        <RevealBlock className="section-heading">
           <h2>Featured work and concepts with a polished presentation</h2>
           <p>
             These cards showcase projects with clear standards, visible structure, and practical implementations.
           </p>
-        </div>
+        </RevealBlock>
 
-        <div className="project-grid">
+        <StaggerGrid className="project-grid" stagger={0.09}>
           {projects.map((project) => (
-            <article className="project-card" key={project.number}>
-              <header>
-                <div>
-                  <span className="project-number">{project.number}</span>
-                  <h3>{project.title}</h3>
-                </div>
-                <span className="project-tag">Featured</span>
-              </header>
+            <StaggerItem key={project.number}>
+              <TiltCard className="h-100">
+                <article className="project-card futuristic-project-card h-100">
+                  <header>
+                    <div>
+                      <span className="project-number">{project.number}</span>
+                      <h3>{project.title}</h3>
+                    </div>
+                    <span className="project-tag">Featured</span>
+                  </header>
 
-              {/* Project Image Preview */}
-              {project.image && (
-                <div className="project-image-wrapper">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="project-card-image"
-                    loading="lazy"
-                  />
-                </div>
-              )}
+                  {project.image && (
+                    <div className="project-image-wrapper">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="project-card-image"
+                        loading="lazy"
+                      />
+                    </div>
+                  )}
 
-              <p>{project.description}</p>
+                  <p>{project.description}</p>
 
-              <div className="chip-row">
-                {project.details.map((detail) => (
-                  <span className="skill-chip" key={detail}>
-                    {detail}
-                  </span>
-                ))}
-              </div>
+                  <div className="chip-row">
+                    {project.details.map((detail) => (
+                      <span className="skill-chip" key={detail}>
+                        {detail}
+                      </span>
+                    ))}
+                  </div>
 
-              <div className="divider-line" />
+                  <div className="divider-line" />
 
-              {project.link && project.link.startsWith("http") ? (
-                <a href={project.link} className="project-link" target="_blank" rel="noreferrer">
-                  {project.linkLabel} <i className="bi bi-arrow-right" />
-                </a>
-              ) : (
-                <Link to="/contact" className="project-link">
-                  {project.linkLabel} <i className="bi bi-arrow-right" />
-                </Link>
-              )}
-            </article>
+                  {project.link && project.link.startsWith("http") ? (
+                    <a
+                      href={project.link}
+                      className="project-link"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {project.linkLabel} <i className="bi bi-arrow-right" />
+                    </a>
+                  ) : (
+                    <Link to="/contact" className="project-link">
+                      {project.linkLabel} <i className="bi bi-arrow-right" />
+                    </Link>
+                  )}
+                </article>
+              </TiltCard>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerGrid>
       </div>
     </section>
   );
