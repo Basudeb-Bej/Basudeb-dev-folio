@@ -1,157 +1,213 @@
 // front-end/src/pages/About.jsx
-import React from "react";
-import { Container, Row, Col, Card } from "react-bootstrap";
-import { RevealBlock, StaggerGrid, StaggerItem } from "../components/MotionPrimitives";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { Container, Row, Col } from "react-bootstrap";
+import {
+  RevealBlock,
+  StaggerGrid,
+  StaggerItem,
+} from "../components/MotionPrimitives";
 
-const capabilities = [
+const architectureLayers = [
   {
-    icon: "bi-diagram-3",
-    title: "System design",
-    body: "I plan the data model and API shape before writing UI, so features stay consistent as the app grows instead of being patched together.",
+    id: "client",
+    label: "Frontend",
+    title: "Responsive Frontend Systems",
+    stack: "React • Angular • Tailwind • Bootstrap",
+    detail:
+      "Component-driven interfaces with fluid motion, accessible states, and mobile-first layouts across every viewport.",
   },
   {
-    icon: "bi-code-slash",
-    title: "Clean implementation",
-    body: "Reusable components on the frontend, clear separation of concerns on the backend, and code that the next person (often future me) can follow.",
+    id: "api",
+    label: "API & Auth",
+    title: "RESTful Services & Security",
+    stack: "Node.js • Express • FastAPI • JWT & 2FA",
+    detail:
+      "Structured endpoints, role-based access control, automated KYC pipelines, and two-factor transaction verification.",
   },
   {
-    icon: "bi-phone",
-    title: "Responsive by default",
-    body: "Every layout is built to hold up from a small phone screen to a wide desktop, not adapted after the fact.",
-  },
-  {
-    icon: "bi-shield-check",
-    title: "Reliable delivery",
-    body: "I scope work honestly, communicate blockers early, and hand off projects that are documented and easy to maintain.",
+    id: "data",
+    label: "Database",
+    title: "Schema Modeling & Cloud",
+    stack: "MongoDB • MySQL • Git • Vercel & Render",
+    detail:
+      "Normalized and document schemas built for data integrity, backed by automated CI/CD cloud deployments.",
   },
 ];
 
-const techStack = [
-  { icon: "devicon-react-original colored", label: "React" },
-  { icon: "devicon-nodejs-plain colored", label: "Node.js" },
-  { icon: "devicon-express-original", label: "Express" },
-  { icon: "devicon-javascript-plain colored", label: "JavaScript" },
-  { icon: "devicon-python-plain colored", label: "Python" },
-  { icon: "devicon-mongodb-plain colored", label: "MongoDB" },
-  { icon: "devicon-mysql-plain colored", label: "MySQL" },
-  { icon: "devicon-bootstrap-plain colored", label: "Bootstrap" },
-  { icon: "devicon-git-plain colored", label: "Git & GitHub" },
-  { icon: "bi bi-shield-lock", label: "JWT Auth" },
-  { icon: "bi bi-hdd-network", label: "REST APIs" },
+const pillars = [
+  {
+    num: "01",
+    icon: "bi-diagram-3",
+    title: "System Design First",
+    body: "Data models and API contracts mapped before UI code so features scale cleanly.",
+  },
+  {
+    num: "02",
+    icon: "bi-code-slash",
+    title: "Maintainable Code",
+    body: "Modular components and clear backend separation built for long-term iteration.",
+  },
+  {
+    num: "03",
+    icon: "bi-shield-check",
+    title: "Security & Reliability",
+    body: "Production JWT/2FA authentication, input validation, and resilient error handling.",
+  },
+  {
+    num: "04",
+    icon: "bi-lightning-charge",
+    title: "End-to-End Ownership",
+    body: "From database schema to live cloud URL—delivering complete products on schedule.",
+  },
 ];
 
 const About = () => {
+  const [activeLayer, setActiveLayer] = useState("client");
+  const currentLayer =
+    architectureLayers.find((layer) => layer.id === activeLayer) ||
+    architectureLayers[0];
+
   return (
     <section className="portfolio-page">
       <Container className="portfolio-shell">
-        <div className="portfolio-hero">
-          <Row className="mb-5 align-items-center">
-            <Col lg={7}>
-              <RevealBlock>
-                <span className="eyebrow mb-3 d-inline-flex">About</span>
-                <h2 className="section-title">
-                  Full-stack development, built the way products actually get used
-                </h2>
-                <p className="section-copy">
-                  I build complete web applications — from database schema to
-                  deployed UI — with a focus on clarity and reliability over
-                  flash. My background spans both JavaScript and Python stacks,
-                  so I pick the right tool for a problem rather than forcing
-                  every project into one framework.
-                </p>
-              </RevealBlock>
-            </Col>
+        {/* TOP SECTION: Open Typography (Left) + Single Interactive Card (Right) */}
+        <Row className="g-4 g-lg-5 align-items-center mb-5">
+          <Col lg={7}>
+            <RevealBlock>
+              <div className="d-flex flex-wrap align-items-center gap-3 mb-3">
+                <span className="eyebrow hero-cyber-badge">
+                  <span className="hero-status-dot" />
+                  About Me
+                </span>
+                <span className="about-inline-meta">
+                  <i className="bi bi-geo-alt" /> India 
+                </span>
+              </div>
 
-            <Col lg={5} className="d-none d-lg-block">
-              <RevealBlock delay={0.15}>
-                <lottie-player
-                  src="https://assets5.lottiefiles.com/packages/lf20_iv4dsx3q.json"
-                  background="transparent"
-                  speed="1"
-                  loop
-                  autoplay
-                  style={{ width: "100%", height: "320px" }}
-                />
-              </RevealBlock>
-            </Col>
-          </Row>
+              <h2 className="about-hero-heading mb-3">
+                Full-Stack Developer building{" "}
+                <span className="hero-gradient-highlight">
+                  scalable, user-centric software
+                </span>{" "}
+                from schema to cloud.
+              </h2>
 
-          {/* Capabilities Grid */}
-          <StaggerGrid>
-            <Row className="g-4 mb-5">
-              {capabilities.map((item) => (
-                <Col key={item.title} md={6} lg={3}>
-                  <StaggerItem className="h-100">
-                    <Card className="h-100 footer-panel about-card-glow futuristic-glass-card border-0">
-                      <Card.Body className="p-0">
-                        <div
-                          className="d-inline-flex align-items-center justify-content-center rounded-3 mb-3 futuristic-icon-box"
-                          style={{
-                            width: "2.75rem",
-                            height: "2.75rem",
-                            background: "rgba(56, 189, 248, 0.16)",
-                            border: "1px solid rgba(56, 189, 248, 0.28)",
-                          }}
-                        >
-                          <i
-                            className={`bi ${item.icon} fs-5`}
-                            style={{ color: "var(--primary-strong)" }}
-                          />
-                        </div>
-                        <Card.Title className="h6 fw-bold mb-2">
-                          {item.title}
-                        </Card.Title>
-                        <Card.Text
-                          className="muted-copy small mb-0"
-                          style={{ lineHeight: 1.65 }}
-                        >
-                          {item.body}
-                        </Card.Text>
-                      </Card.Body>
-                    </Card>
-                  </StaggerItem>
-                </Col>
-              ))}
-            </Row>
-          </StaggerGrid>
+              <p className="section-copy mb-4">
+                I’m <strong>Basudeb Bej</strong>. I architect and ship complete
+                web applications across JavaScript and Python ecosystems—combining
+                clean backend engineering, secure authentication workflows, and
+                refined, responsive UI.
+              </p>
 
-          {/* Tech Stack Card */}
-          <RevealBlock delay={0.1}>
-            <Card className="footer-panel about-card-glow futuristic-glass-card border-0">
-              <Card.Body className="p-0">
-                <h3 className="h5 fw-bold mb-1">Technologies I work with</h3>
-                <p
-                  className="muted-copy small mb-3"
-                  style={{ lineHeight: 1.6 }}
-                >
-                  Comfortable across both JavaScript (React, Node.js, Express)
-                  and Python full-stack development — databases, APIs,
-                  authentication, and deployment included.
-                </p>
-
-                <div className="d-flex flex-wrap gap-2">
-                  {techStack.map((tech) => (
-                    <span
-                      key={tech.label}
-                      className="tag-chip futuristic-tag-chip d-inline-flex align-items-center gap-2 px-3 py-2 fw-semibold"
-                      style={{ fontSize: "0.86rem", borderRadius: "999px" }}
-                    >
-                      <i
-                        className={tech.icon}
-                        style={
-                          tech.label === "Express"
-                            ? { filter: "var(--express-filter, none)" }
-                            : undefined
-                        }
-                      />
-                      {tech.label}
-                    </span>
-                  ))}
+              {/* Flat Typographic Spec Strip (No Boxes) */}
+              {/* <div className="about-spec-strip mb-4">
+                <div className="about-spec-item">
+                  <strong>Full-Stack</strong>
+                  <span>MERN & Python</span>
                 </div>
-              </Card.Body>
-            </Card>
-          </RevealBlock>
-        </div>
+                <div className="about-spec-divider" />
+                <div className="about-spec-item">
+                  <strong>Production</strong>
+                  <span>Banking, AI & FinTech</span>
+                </div>
+                <div className="about-spec-divider" />
+                <div className="about-spec-item">
+                  <strong>Security</strong>
+                  <span>JWT, 2FA & KYC</span>
+                </div>
+              </div> */}
+
+              {/* Clean CTA Row */}
+              <div className="d-flex flex-wrap gap-2">
+                <Link
+                  to="/projects"
+                  className="portfolio-btn portfolio-btn-primary futuristic-btn-glow"
+                >
+                  View Projects <i className="bi bi-arrow-right" />
+                </Link>
+                <Link
+                  to="/skills"
+                  className="portfolio-btn portfolio-btn-secondary futuristic-btn-outline"
+                >
+                  Tech Stack <i className="bi bi-layers" />
+                </Link>
+                <a
+                  href="/Resume.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="portfolio-btn portfolio-btn-secondary futuristic-btn-outline"
+                >
+                  Resume <i className="bi bi-file-earmark-arrow-down" />
+                </a>
+              </div>
+            </RevealBlock>
+          </Col>
+
+          {/* Single Flat Card — No Inner Nested Boxes */}
+          <Col lg={5}>
+            <RevealBlock delay={0.12}>
+              <div className="about-single-card about-card-glow">
+                <div className="d-flex align-items-center justify-content-between mb-3">
+                  <span className="about-blueprint-kicker">
+                    <i className="bi bi-cpu" /> ARCHITECTURE FOCUS
+                  </span>
+                  <div
+                    className="about-underline-tabs"
+                    role="tablist"
+                    aria-label="System Architecture Layers"
+                  >
+                    {architectureLayers.map((layer) => {
+                      const isActive = layer.id === activeLayer;
+                      return (
+                        <button
+                          key={layer.id}
+                          type="button"
+                          role="tab"
+                          aria-selected={isActive}
+                          onClick={() => setActiveLayer(layer.id)}
+                          className={`about-underline-tab ${
+                            isActive ? "is-active" : ""
+                          }`}
+                        >
+                          {layer.label}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                <div className="about-layer-content" key={currentLayer.id}>
+                  <h3 className="about-layer-title">{currentLayer.title}</h3>
+                  <p className="about-layer-stack">{currentLayer.stack}</p>
+                  <p className="about-layer-desc">{currentLayer.detail}</p>
+                </div>
+              </div>
+            </RevealBlock>
+          </Col>
+        </Row>
+
+        {/* BOTTOM ROW: 4 Flat Engineering Pillars (Single Card Layer Only) */}
+        <StaggerGrid stagger={0.08}>
+          <Row className="g-3">
+            {pillars.map((item) => (
+              <Col key={item.title} sm={6} lg={3}>
+                <StaggerItem className="h-100">
+                  <div className="about-single-card about-card-glow futuristic-glass-card h-100">
+                    <div className="d-flex align-items-center justify-content-between mb-3">
+                      <div className="about-pillar-icon">
+                        <i className={`bi ${item.icon}`} />
+                      </div>
+                      <span className="about-pillar-num">{item.num}</span>
+                    </div>
+                    <h3 className="about-pillar-title">{item.title}</h3>
+                    <p className="about-pillar-body">{item.body}</p>
+                  </div>
+                </StaggerItem>
+              </Col>
+            ))}
+          </Row>
+        </StaggerGrid>
       </Container>
     </section>
   );

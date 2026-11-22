@@ -43,80 +43,89 @@ const Skills = () => {
   return (
     <section className="portfolio-page">
       <div className="portfolio-shell">
-        <div className="portfolio-hero">
-          <div className="portfolio-hero-grid">
-            <StaggerGrid className="skill-grid" stagger={0.07}>
-              {skills.map((skill) => (
-                <StaggerItem key={skill.title}>
-                  <article className="skill-card futuristic-glass-card h-100">
-                    <span className="skill-icon-badge futuristic-icon-box" aria-hidden="true">
-                      <i className={`bi ${skill.icon}`} />
-                    </span>
-                    <strong>{skill.title}</strong>
-                    <p>{skill.description}</p>
-                  </article>
-                </StaggerItem>
-              ))}
-            </StaggerGrid>
+        <RevealBlock className="section-heading">
+          <span className="eyebrow hero-cyber-badge">
+            <span className="hero-status-dot" />
+            Skills & Experience
+          </span>
+          <h2>Technical stack and hands-on engineering</h2>
+          <p>
+            Core technologies I use to architect full-stack products alongside real-world internship delivery.
+          </p>
+        </RevealBlock>
 
-            <RevealBlock delay={0.15} className="portfolio-panel futuristic-glass-card">
-              <div className="experience-card">
-                <button
-                  type="button"
-                  className="experience-image-trigger"
-                  onClick={() => setIsLightboxOpen(true)}
-                  aria-label="View certificate in full size"
-                >
-                  <img
-                    src={image2}
-                    alt="Full-Stack Developer Internship experience"
-                    className="experience-image"
-                    draggable={false}
-                    onDragStart={(event) => event.preventDefault()}
-                    onContextMenu={(event) => event.preventDefault()}
-                  />
-                  <span className="experience-image-zoom-hint">
-                    <i className="bi bi-zoom-in" /> View full size
+        <div className="portfolio-hero-grid">
+          {/* Left: 6 single-layer skill cards */}
+          <StaggerGrid className="skill-grid" stagger={0.07}>
+            {skills.map((skill) => (
+              <StaggerItem key={skill.title}>
+                <article className="skill-card futuristic-glass-card h-100">
+                  <span className="skill-icon-badge futuristic-icon-box" aria-hidden="true">
+                    <i className={`bi ${skill.icon}`} />
                   </span>
-                </button>
+                  <strong>{skill.title}</strong>
+                  <p>{skill.description}</p>
+                </article>
+              </StaggerItem>
+            ))}
+          </StaggerGrid>
 
-                <div className="experience-content">
-                  <span className="eyebrow">Experience</span>
-                  <h3>Full-Stack Developer Internship</h3>
-                  <p>
-                    Built practical{" "}
-                    <a
-                      href="https://zero-bank-five.vercel.app/"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="project-link text-decoration-underline"
-                    >
-                      'Digital core Banking System'
-                    </a>{" "}
-                    and web app features during a Full-Stack Developer internship,
-                    focusing on React UI work, Node.js and Express flows, MongoDB data handling,
-                    and turning ideas into clean user-facing screens.
-                  </p>
+          {/* Right: Single flat experience card (no outer panel wrapper box) */}
+          <RevealBlock delay={0.15} className="portfolio-panel futuristic-glass-card">
+            <button
+              type="button"
+              className="experience-image-trigger"
+              onClick={() => setIsLightboxOpen(true)}
+              aria-label="View certificate in full size"
+            >
+              <img
+                src={image2}
+                alt="Full-Stack Developer Internship experience"
+                className="experience-image"
+                draggable={false}
+                onDragStart={(event) => event.preventDefault()}
+                onContextMenu={(event) => event.preventDefault()}
+              />
+              <span className="experience-image-zoom-hint">
+                <i className="bi bi-zoom-in" /> View full size
+              </span>
+            </button>
 
-                  <div className="chip-row mb-2">
-                    <span className="skill-chip">React</span>
-                    <span className="skill-chip">Node.js</span>
-                    <span className="skill-chip">Express</span>
-                    <span className="skill-chip">MongoDB</span>
-                  </div>
+            <div className="experience-content">
+              <span className="eyebrow">Experience</span>
+              <h3>Full-Stack Developer Internship</h3>
+              <p>
+                Built practical{" "}
+                <a
+                  href="https://zero-bank-five.vercel.app/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="project-link text-decoration-underline"
+                >
+                  'Digital core Banking System'
+                </a>{" "}
+                and web app features during a Full-Stack Developer internship,
+                focusing on React UI work, Node.js and Express flows, MongoDB data handling,
+                and turning ideas into clean user-facing screens.
+              </p>
 
-                  <a
-                    href="https://zero-bank-five.vercel.app/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="project-link d-inline-flex align-items-center gap-2 pt-1"
-                  >
-                    View ZeroBank Live <i className="bi bi-box-arrow-up-right" />
-                  </a>
-                </div>
+              <div className="chip-row mb-2">
+                <span className="skill-chip">React</span>
+                <span className="skill-chip">Node.js</span>
+                <span className="skill-chip">Express</span>
+                <span className="skill-chip">MongoDB</span>
               </div>
-            </RevealBlock>
-          </div>
+
+              <a
+                href="https://zero-bank-five.vercel.app/"
+                target="_blank"
+                rel="noreferrer"
+                className="project-link d-inline-flex align-items-center gap-2 pt-1"
+              >
+                View ZeroBank Live <i className="bi bi-box-arrow-up-right" />
+              </a>
+            </div>
+          </RevealBlock>
         </div>
       </div>
 

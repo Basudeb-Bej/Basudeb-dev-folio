@@ -1669,11 +1669,6 @@ body.light .project-image-wrapper {
   box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.16);
 }
 
-/* Footer minimal top aura */
-footer {
-  border-top: 1px solid rgba(56, 189, 248, 0.14);
-}
-
 /* ---------- 4. Cross-Device Responsive Guarantees (320px - 1920px+) ---------- */
 @media (max-width: 768px) {
   .hero-actions {
@@ -1717,4 +1712,302 @@ footer {
   .project-card-image {
     transition: none !important;
   }
+}
+
+/* ==========================================================================
+   ABOUT PAGE — CLEAN SINGLE-LAYER EDITORIAL LAYOUT
+   ========================================================================== */
+
+.about-inline-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+body.light .about-inline-meta {
+  color: #475569;
+}
+
+.about-hero-heading {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.85rem, 3.1vw, 2.85rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+
+body.light .about-hero-heading {
+  color: #0f172a;
+}
+
+/* Flat Typographic Spec Strip (Zero Boxes) */
+.about-spec-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 0.85rem 0;
+  border-top: 1px solid rgba(166, 191, 255, 0.14);
+  border-bottom: 1px solid rgba(166, 191, 255, 0.14);
+}
+
+body.light .about-spec-strip {
+  border-color: rgba(15, 23, 42, 0.08);
+}
+
+.about-spec-item strong {
+  display: block;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.about-spec-item span {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+body.light .about-spec-item strong {
+  color: #0284c7;
+}
+
+body.light .about-spec-item span {
+  color: #475569;
+}
+
+.about-spec-divider {
+  width: 1px;
+  height: 2rem;
+  background: rgba(166, 191, 255, 0.14);
+}
+
+body.light .about-spec-divider {
+  background: rgba(15, 23, 42, 0.08);
+}
+
+/* Single Flat Card Surface */
+.about-single-card {
+  position: relative;
+  padding: 1.5rem;
+  border-radius: 22px;
+  backdrop-filter: blur(18px);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+body.light .about-single-card {
+  background: rgba(255, 255, 255, 0.86);
+  border-color: rgba(15, 23, 42, 0.08);
+}
+
+/* Minimal Underline Tabs (No Pill Container Box) */
+.about-blueprint-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  color: var(--primary);
+}
+
+body.light .about-blueprint-kicker {
+  color: #0284c7;
+}
+
+.about-underline-tabs {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  border-bottom: 1px solid rgba(166, 191, 255, 0.14);
+}
+
+body.light .about-underline-tabs {
+  border-bottom-color: rgba(15, 23, 42, 0.08);
+}
+
+.about-underline-tab {
+  position: relative;
+  padding: 0.35rem 0.1rem 0.5rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.about-underline-tab:hover {
+  color: var(--text);
+}
+
+.about-underline-tab.is-active {
+  color: var(--primary);
+}
+
+.about-underline-tab.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-strong), var(--secondary));
+}
+
+body.light .about-underline-tab {
+  color: #64748b;
+}
+
+body.light .about-underline-tab.is-active {
+  color: #0284c7;
+}
+
+@keyframes layerFadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-layer-content {
+  padding-top: 0.35rem;
+  animation: layerFadeSlide 0.25s ease both;
+}
+
+.about-layer-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 0 0.35rem;
+  color: var(--text);
+}
+
+body.light .about-layer-title {
+  color: #0f172a;
+}
+
+.about-layer-stack {
+  margin: 0 0 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--secondary);
+}
+
+body.light .about-layer-stack {
+  color: #7c3aed;
+}
+
+.about-layer-desc {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+body.light .about-layer-desc {
+  color: #475569;
+}
+
+/* Pillar Card Internals (No Nested Boxes) */
+.about-pillar-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(56, 189, 248, 0.12);
+  color: var(--primary-strong);
+  font-size: 1.1rem;
+}
+
+.about-pillar-num {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--muted);
+  opacity: 0.6;
+}
+
+.about-pillar-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.02rem;
+  font-weight: 700;
+  margin: 0 0 0.4rem;
+  color: var(--text);
+}
+
+body.light .about-pillar-title {
+  color: #0f172a;
+}
+
+.about-pillar-body {
+  margin: 0;
+  font-size: 0.86rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+body.light .about-pillar-body {
+  color: #475569;
+}
+
+@media (max-width: 576px) {
+  .about-spec-divider {
+    display: none;
+  }
+
+  .about-spec-strip {
+    gap: 1rem 1.5rem;
+  }
+}
+
+/* Clean, professional Contact submit button (no blinking/gradient) */
+.contact-submit.contact-submit-clean {
+  animation: none !important;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  border: 1px solid rgba(166, 191, 255, 0.24);
+  box-shadow: none;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.contact-submit.contact-submit-clean:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(166, 191, 255, 0.42);
+  transform: translateY(-1px);
+  box-shadow: none;
+}
+
+.contact-submit.contact-submit-clean:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Light mode adjustment */
+body.light .contact-submit.contact-submit-clean {
+  background: #0f172a;
+  color: #ffffff;
+  border-color: #0f172a;
+}
+
+body.light .contact-submit.contact-submit-clean:hover:not(:disabled) {
+  background: #1e293b;
+  border-color: #1e293b;
 }
