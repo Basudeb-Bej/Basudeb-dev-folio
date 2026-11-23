@@ -41,11 +41,11 @@ const Home = () => {
                 }}
                 {...fadeUp(0.14)}
               >
-                I design and build{" "}
+                I build fast, polished{" "}
                 <strong className="hero-gradient-highlight">
                   end-to-end web applications
                 </strong>
-                —from database to deployment—that feel polished, fast, and personal.
+                —from database to deployment.
               </motion.h2>
 
               <motion.p className="section-copy" {...fadeUp(0.24)}>
@@ -112,10 +112,13 @@ const Home = () => {
                 <div className="profile-meta">
                   <span className="meta-chip">Basudeb Bej</span>
                   <h2>Full-Stack Developer</h2>
-                  <p>
+                  {/* <p>
                     i am basudeb bej, a full-stack developer with a passion for
                     creating interactive websites that strike the perfect balance
                     between design, usability, and performance.
+                  </p> */}
+                  <p>
+                    I’m Basudeb Bej, a full-stack developer building high-performance interactive websites.
                   </p>
                 </div>
               </div>
