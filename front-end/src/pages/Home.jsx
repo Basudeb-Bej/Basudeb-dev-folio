@@ -41,7 +41,7 @@ const Home = () => {
                 }}
                 {...fadeUp(0.14)}
               >
-                I build fast, polished{" "}
+                I build fast, polished,{" "}
                 <strong className="hero-gradient-highlight">
                   end-to-end web applications
                 </strong>
