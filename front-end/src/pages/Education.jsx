@@ -49,10 +49,15 @@ const Education = () => {
     <section className="portfolio-page">
       <div className="portfolio-shell">
         <RevealBlock className="section-heading">
-          <span className="eyebrow hero-cyber-badge">
-            <span className="hero-status-dot" />
-            Education
-          </span>
+          <div className="d-flex flex-wrap align-items-center gap-3 mb-3">
+            <span className="eyebrow hero-cyber-badge">
+              <span className="hero-status-dot" />
+              Education
+            </span>
+            <span className="about-inline-meta">
+              <i className="bi bi-geo-alt" /> India
+            </span>
+          </div>
           <h2>Academic background and continuous growth</h2>
           <p>
             A structured timeline of formal computer science studies alongside the engineering habits I refine on every project.
@@ -91,9 +96,9 @@ const Education = () => {
                   style={
                     index !== growthAreas.length - 1
                       ? {
-                          paddingBottom: "1rem",
-                          borderBottom: "1px solid rgba(166, 191, 255, 0.14)",
-                        }
+                        paddingBottom: "1rem",
+                        borderBottom: "1px solid rgba(166, 191, 255, 0.14)",
+                      }
                       : undefined
                   }
                 >

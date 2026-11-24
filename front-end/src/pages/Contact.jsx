@@ -127,9 +127,21 @@ const Contact = () => {
       ) : null}
 
       <div className="portfolio-shell contact-no-blink">
+        <div className="section-heading">
+          <div className="d-flex flex-wrap align-items-center gap-3 mb-3">
+            <span className="eyebrow hero-cyber-badge">
+              <span className="hero-status-dot" />
+              Contact
+            </span>
+            <span className="about-inline-meta">
+              <i className="bi bi-geo-alt" /> India
+            </span>
+          </div>
+        </div>
+
         <div className="contact-grid">
           <div className="contact-card contact-card-primary futuristic-glass-card">
-            <span className="eyebrow">Send a message</span>
+            {/* <span className="eyebrow">Send a message</span> */}
             <div className="contact-hero-copy">
               <h3>Share your idea, timeline, and what success looks like</h3>
               <p className="contact-copy">

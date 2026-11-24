@@ -72,10 +72,19 @@ const Projects = () => {
     <section className="portfolio-page">
       <div className="portfolio-shell">
         <RevealBlock className="section-heading">
-          <h2>Featured work and concepts with a polished presentation</h2>
+          <div className="d-flex flex-wrap align-items-center gap-3 mb-3">
+            <span className="eyebrow hero-cyber-badge">
+              <span className="hero-status-dot" />
+              Projects
+            </span>
+            <span className="about-inline-meta">
+              <i className="bi bi-geo-alt" /> India
+            </span>
+          </div>
+          {/* <h2>Featured work and concepts with a polished presentation</h2>
           <p>
             These cards showcase projects with clear standards, visible structure, and practical implementations.
-          </p>
+          </p> */}
         </RevealBlock>
 
         <StaggerGrid className="project-grid" stagger={0.09}>

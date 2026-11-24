@@ -14,10 +14,10 @@ const Home = () => {
     shouldReduceMotion
       ? {}
       : {
-          initial: { opacity: 0, y: 22 },
-          animate: { opacity: 1, y: 0 },
-          transition: { duration: 0.6, delay, ease: EASE_OUT_EXPO },
-        };
+        initial: { opacity: 0, y: 22 },
+        animate: { opacity: 1, y: 0 },
+        transition: { duration: 0.6, delay, ease: EASE_OUT_EXPO },
+      };
 
   return (
     <section className="portfolio-page home-page">
@@ -25,13 +25,18 @@ const Home = () => {
         <div className="portfolio-hero">
           <div className="portfolio-hero-grid">
             <div>
-              <motion.span
-                className="eyebrow hero-cyber-badge"
+              <motion.div
+                className="d-flex flex-wrap align-items-center gap-3 mb-3"
                 {...fadeUp(0.05)}
               >
-                <span className="hero-status-dot" />
-                Full-Stack Developer
-              </motion.span>
+                <span className="eyebrow hero-cyber-badge">
+                  <span className="hero-status-dot" />
+                  Full-Stack Developer
+                </span>
+                <span className="about-inline-meta">
+                  <i className="bi bi-geo-alt" /> India
+                </span>
+              </motion.div>
 
               <motion.h2
                 className="section-title hero-futuristic-title"

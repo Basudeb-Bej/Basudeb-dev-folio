@@ -44,10 +44,15 @@ const Skills = () => {
     <section className="portfolio-page">
       <div className="portfolio-shell">
         <RevealBlock className="section-heading">
-          <span className="eyebrow hero-cyber-badge">
-            <span className="hero-status-dot" />
-            Skills & Experience
-          </span>
+          <div className="d-flex flex-wrap align-items-center gap-3 mb-3">
+            <span className="eyebrow hero-cyber-badge">
+              <span className="hero-status-dot" />
+              Skills & Experience
+            </span>
+            <span className="about-inline-meta">
+              <i className="bi bi-geo-alt" /> India
+            </span>
+          </div>
           <h2>Technical stack and hands-on engineering</h2>
           <p>
             Core technologies I use to architect full-stack products alongside real-world internship delivery.
